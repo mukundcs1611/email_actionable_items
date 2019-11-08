@@ -65,11 +65,23 @@ Future Tasks:
  
  
  ### 2. Classification
-References:
+ 
+ Steps that I followed before creating a model:
+ 
+ - The quality of the clustering done using manual rules has proven to be not very effective as the a lot of sentences provided in actions.csv  were not clustered properly
+ - I have collated actions.csv and non action items from my rules
+ - Based on actions.csv I have added some more rules in code
+ - Later I have manually corrected the labels for many to come up with the final_classifier_data.csv
+ - From analysis I have found out that roughly 16% of sentences are clustered into action_items.
+ - actions.csv only contained 1250 samples and assuming that it is 16% , I have sampled about 6500+ non action items from my clustered data
+ - Post this I have done some more cleaning of text 
 
+ I have used tensorflow keras layers to come up with a model , the architecture is fairly straightforward . there is one embedding layer , one dense layer and a output layer 
+  
+References:
+    - https://www.tensorflow.org/tutorials/text/text_classification_rnn
     - https://www.kaggle.com/jamestollefson/enron-network-analysis
     - https://towardsdatascience.com/how-i-used-machine-learning-to-classify-emails-and-turn-them-into-insights-efed37c1e66
     - https://www.scikit-yb.org/en/latest/api/cluster/
     - http://web.science.mq.edu.au/~rdale/publications/papers/2010/naaclhlt2010-final.pdf
     
-
